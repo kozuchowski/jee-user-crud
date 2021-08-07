@@ -41,7 +41,7 @@
       <td>${user.id}</td>
       <td>${user.username}</td>
       <td>${user.email}</td>
-      <td><div class="links_container"><a href="">usuń</a><a href="">edytuj</a></div></td>
+      <td><div class="links_container"><a href="/delete?id=${user.id}">usuń</a><a href="edit?id=${user.id}">edytuj</a></div></td>
   </tr>
 </c:forEach>
 </table>

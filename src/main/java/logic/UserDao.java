@@ -23,7 +23,7 @@ public class UserDao {
     }
 
 
-    public User create(User user) {
+    public static User create(User user) {
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getEmail());
@@ -72,7 +72,7 @@ public class UserDao {
 
 
 
-    public User read(int id) {
+    public static User read(int id) {
         User user = null;
         try (Connection conn = DbUtil.getConnection()) {
             user = new User();
@@ -97,7 +97,7 @@ public class UserDao {
         return user;
     }
 
-    public void update(User user){
+    public static void update(User user){
         try (Connection conn = DbUtil.getConnection()) {
 
             PreparedStatement statement = conn.prepareStatement(UPDATE_USER_QUERY);
@@ -112,7 +112,7 @@ public class UserDao {
 
     }
 
-    public void delete(int id){
+    public static void delete(int id){
         try(Connection conn = DbUtil.getConnection()){
             PreparedStatement statement = conn.prepareStatement(DELETE_USER_QUERY);
             statement.setString(1,String.valueOf(id));
