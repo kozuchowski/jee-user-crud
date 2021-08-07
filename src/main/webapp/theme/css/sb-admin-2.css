@@ -54,8 +54,34 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
+}
+table{
+  width: 100%;
+  margin-bottom: 20px;
+}
+td {
+  text-align: center;
+}
+.users_list th{
+  text-align: center;
+}
+
+tr{
+  border: solid #858796 1px;
+  border-radius: 10px;
+  line-height: 2.5rem;
+}
+.links_container a {
+  padding: 0 10px 0 10px;
+}
+.links_container{
+  display: flex;
+  justify-content: center;
 }
 
 body {

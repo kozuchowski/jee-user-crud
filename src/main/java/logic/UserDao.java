@@ -1,4 +1,8 @@
+package logic;
+
 import org.mindrot.jbcrypt.BCrypt;
+import utils.DbUtil;
+
 import java.sql.*;
 import java.util.Arrays;
 
@@ -40,24 +44,23 @@ public class UserDao {
 
     public static User[] findAll() {
         User user = null;
-        User[] users = new User[100];
+        User[] users = new User[0];
         try (Connection conn = DbUtil.getConnection()) {
 
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM users");
-
+            int counter = 0;
             while(rs.next()){
                user = new User();
                user.setUsername(rs.getString("username"));
                user.setEmail(rs.getString("email"));
                user.setPassword(rs.getString("password"));
+               user.setId(rs.getInt("id"));
+               users = Arrays.copyOf(users, users.length + 1);
+               users[counter++] = user;
 
-               if(rs.getInt("id") <= 100){
-                   users[rs.getInt("id") - 1] = user;
-               }else {
-                   users = Arrays.copyOf(users, users.length + 1);
-                   users[users.length - 1] = user;
-               }
+
+
             }
 
         } catch (SQLException e) {

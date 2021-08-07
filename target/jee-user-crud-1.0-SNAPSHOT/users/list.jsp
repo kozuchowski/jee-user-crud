@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
@@ -26,54 +27,29 @@
 </head>
 
 <body id="page-top">
+<%@ include file="header.jsp" %>
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+<table class="users_list">
+    <tr>
+        <th>id</th>
+        <th>nazwa użytkownika</th>
+        <th>email</th>
+        <th>akcja</th>
+    </tr>
+<c:forEach items="${users}" var="user">
+  <tr>
+      <td>${user.id}</td>
+      <td>${user.username}</td>
+      <td>${user.email}</td>
+      <td><div class="links_container"><a href="">usuń</a><a href="">edytuj</a></div></td>
+  </tr>
+</c:forEach>
+</table>
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
 
 
 
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-        <!-- Sidebar Message -->
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-            </nav>
-            <!-- End of Topbar -->
+<!-- Page Wrapper -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -133,6 +109,10 @@
         </div>
     </div>
 </div>
+
+<%@ include file="footer.jsp" %>
+
+
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
