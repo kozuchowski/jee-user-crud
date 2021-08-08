@@ -1,5 +1,8 @@
 package pl.coderslab.users;
 
+import logic.User;
+import logic.UserDao;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -16,6 +19,11 @@ public class Create extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        User user = new User();
+        user.setUsername(request.getParameter("username"));
+        user.setEmail(request.getParameter("email"));
+        user.setPassword(request.getParameter("password"));
+        UserDao.create(user);
+        response.sendRedirect("/list");
     }
 }

@@ -41,7 +41,7 @@
 
                 <!-- Page Heading -->
                 <div class="list_container">
-                    <div class="logo_container"><h1>UsersCrud</h1><a href="" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Dodaj użytkownika</a></div>
+                    <div class="logo_container"><h1>UsersCrud</h1><a href="/create" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Dodaj użytkownika</a></div>
                     <div><h3>Lista użytkowników</h3></div>
                     <table class="users_list">
                         <tr>

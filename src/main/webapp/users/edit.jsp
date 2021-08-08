@@ -29,14 +29,6 @@
 <body id="page-top">
 <%@ include file="header.jsp" %>
 
-<div class="edit_form_container">
-    <form method="post" class="edit_form">
-        <input type="number" style="display: none" placeholder="${id}">
-        <input type="text" name="username" placeholder="${username}">
-        <input type="text" name="email" placeholder="${email}">
-        <input type="password" name="password" placeholder="${password}">
-        <button class="btn-primary">Prześlij</button>
-    </form>
-</div>
+<jsp:include page="form.jsp"></jsp:include>
 
 <jsp:include page="footer.jsp"></jsp:include>
