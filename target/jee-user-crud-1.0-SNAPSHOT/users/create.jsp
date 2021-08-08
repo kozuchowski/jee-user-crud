@@ -31,9 +31,9 @@
     <div class="form_container">
         <form method="post" class="edit_form" >
             <input type="text" name="username"  placeholder="Podaj nazwę użytkownika">
-            <input type="text" name="email" placeholder="Podaj email">
+            <input type="email" name="email" placeholder="Podaj email">
             <input type="password" name="password" placeholder="Podaj hasło">
-            <button class="btn-primary">Prześlij</button>
+            <button class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Prześlij</button>
         </form>
     </div>
 

@@ -28,6 +28,9 @@
 
 <body id="page-top">
 <%@ include file="header.jsp" %>
+<h1>${username}</h1>
+<h1>${email}</h1>
+<h1>${password}</h1>
 
 <jsp:include page="form.jsp"></jsp:include>
 

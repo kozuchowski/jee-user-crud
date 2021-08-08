@@ -14,6 +14,7 @@ public class Edit extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
+
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -32,10 +33,12 @@ public class Edit extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         User user = new User();
+
         user.setId(Integer.parseInt(request.getParameter("id")));
-        user.setUsername(request.getParameter("username"));
-        user.setEmail(request.getParameter("email"));
-        user.setPassword(request.getParameter("password"));
+        user.setUsername(request.getParameter("u.name"));
+        user.setEmail(request.getParameter("u.email"));
+        user.setPassword(request.getParameter("u.password"));
+
         UserDao.update(user);
         response.sendRedirect("/list");
     }

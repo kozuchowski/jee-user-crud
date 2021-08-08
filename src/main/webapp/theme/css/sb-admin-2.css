@@ -104,6 +104,19 @@ tr{
 
   line-height: 2.5rem;
 }
+
+.show_user_table {
+  max-width: 50%;
+
+}
+.show_user_table tr {
+  font-size: 1rem;
+  line-height: 2.5rem;
+  display: flex;
+}
+.show_user_table td {
+  padding-left: 20px;
+}
 .links_container a {
   padding: 0 10px 0 10px;
 }
