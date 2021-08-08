@@ -1,26 +1,17 @@
 package pl.coderslab.users;
 
-import logic.User;
-import logic.UserDao;
-
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-
-@WebServlet("/list")
-public class UserList extends HttpServlet {
+@WebServlet(name = "Create", value = "/create")
+public class Create extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        User[] users = UserDao.findAll();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("users/list.jsp").forward(request,response);
-
-
+        request.getRequestDispatcher("users/create.jsp").forward(request,response);
     }
 
     @Override

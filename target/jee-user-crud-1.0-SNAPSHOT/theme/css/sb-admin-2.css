@@ -60,9 +60,36 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
+
+.table_container  {
+  max-width: 80%;
+  background: white;
+}
+.logo_container{
+  display: flex;
+  justify-content: space-between;
+}
+.list_container{
+  padding: 5 50 5 50;
+}
+.list_container a{
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 3rem;
+}
+.logo_container h1, button {
+  margin: 5px 10px 5px 10px;
+}
+.list_container div h3 {
+  margin-top: 20px;
+  color: #4e73df;
+}
+
 table{
   width: 100%;
   margin-bottom: 20px;
+  background: white;
 }
 td {
   text-align: center;
@@ -72,8 +99,9 @@ td {
 }
 
 tr{
-  border: solid #858796 1px;
-  border-radius: 10px;
+  border-top: solid #858796 1px;
+  border-bottom: solid #858796 1px;
+
   line-height: 2.5rem;
 }
 .links_container a {
@@ -83,6 +111,18 @@ tr{
   display: flex;
   justify-content: center;
 }
+
+/*edit form*/
+.edit_form_container{
+  max-width: 30%;
+}
+.edit_form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 
 body {
   margin: 0;

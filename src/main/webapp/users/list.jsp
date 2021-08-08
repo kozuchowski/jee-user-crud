@@ -29,22 +29,7 @@
 <body id="page-top">
 <%@ include file="header.jsp" %>
 
-<table class="users_list">
-    <tr>
-        <th>id</th>
-        <th>nazwa użytkownika</th>
-        <th>email</th>
-        <th>akcja</th>
-    </tr>
-<c:forEach items="${users}" var="user">
-  <tr>
-      <td>${user.id}</td>
-      <td>${user.username}</td>
-      <td>${user.email}</td>
-      <td><div class="links_container"><a href="/delete?id=${user.id}">usuń</a><a href="/edit?id=${user.id}">edytuj</a></div></td>
-  </tr>
-</c:forEach>
-</table>
+
 
 
 
@@ -55,10 +40,29 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                <div class="list_container">
+                    <div class="logo_container"><h1>UsersCrud</h1><a href="/create" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Dodaj użytkownika</a></div>
+                    <div><h3>Lista użytkowników</h3></div>
+                    <table class="users_list">
+                        <tr>
+                            <th>id</th>
+                            <th>nazwa użytkownika</th>
+                            <th>email</th>
+                            <th>akcja</th>
+                        </tr>
+                        <c:forEach items="${users}" var="user">
+                            <tr>
+                                <td>${user.id}</td>
+                                <td>${user.username}</td>
+                                <td>${user.email}</td>
+                                <td><div class="links_container">
+                                    <a href="/delete?id=${user.id}">usuń</a>
+                                    <a href="/edit?name=${user.username}&email=${user.email}&password=${user.password}&id=${user.id}">edytuj</a>
+                                    <a href="/show?id=${user.id}">pokaż</a>
+                                </div></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
                 </div>
 
                 <!-- Content Row -->
@@ -69,15 +73,7 @@
         </div>
         <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2021</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
+        <%@ include file="footer.jsp" %>
 
     </div>
     <!-- End of Content Wrapper -->
@@ -110,7 +106,7 @@
     </div>
 </div>
 
-<%@ include file="footer.jsp" %>
+
 
 
 
